@@ -1,6 +1,5 @@
 objects = [];
 status1 = "";
-Person = "person";
 
 function preload() {
     song = loadSound("Alarm.mp3");
@@ -31,7 +30,7 @@ function draw() {
         for (i = 0; i < objects.length; i++) {
             document.getElementById("status_of_baby").innerHTML = "STATUS : OBJECT DETECTED";
 
-            if (objects[i].label != Person) {
+            if (objects[i].label != "person") {
                 document.getElementById("status_of_baby_text").innerHTML = "BABY NOT FOUND";
                 song.rate(2);
                 song.play();
@@ -45,7 +44,7 @@ function draw() {
             }
 
 
-            if (objects[i].label == Person) {
+            if (objects[i].label == "person") {
                 song.pause();
                 document.getElementById("status_of_baby_text").innerHTML = "BABY FOUND";
 
